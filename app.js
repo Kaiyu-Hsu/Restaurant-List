@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const port = 3001
+const port = 3000
 
 //告訴 Express 靜態檔案是放在名為 public 的資料夾中
 app.use(express.static('public'))
