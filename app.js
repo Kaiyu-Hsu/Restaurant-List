@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
 const port = 3000
+const restaurantList = require('./restaurant.json')
 
 // require express-handlebars here
 const exphbs = require('express-handlebars')
@@ -14,7 +15,7 @@ app.set('view engine', 'handlebars')
 
 // setting router
 app.get('/', (req, res) => {
-  res.render('index')
+  res.render('index', { restaurants: restaurantList.results })
 })
 
 app.listen( port, () => {

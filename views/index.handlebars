@@ -15,23 +15,25 @@
   </div>
 
   {{!-- card --}}
-  <div class="row" id="data-panel">
+  <div class="row justify-content-center" id="data-panel">
 
-    <div class="card" style="width: 18rem;">
-      <img src="https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5635/01.jpg" class="card-img-top"
-        alt="...">
+    {{#each restaurants}}
+    <div class="card m-2" style="width: 18rem;">
+      <img src="{{this.image}}" class="card-img-top" alt="...">
       <div class="card-body">
-        <h5 class="card-title">Sababa 沙巴巴中東美食</h5>
-        <p class="card-text">沙巴巴批塔是台灣第一家純手工批塔專賣店,只選用最新鮮的頂級原料,以及道地的中東家傳配方。
+        <h5 class="card-title">{{this.name}}</h5>
+        <p class="card-text">{{this.description}}
         </p>
       </div>
       <ul class="list-group list-group-flush">
-        <li class="list-group-item">分類: 中東料理</li>
-        <li class="list-group-item">評分: 4.1</li>
+        <li class="list-group-item" id="category">分類: {{this.category}}</li>
+        <li class="list-group-item" id="rating">評分: {{this.rating}}</li>
       </ul>
       <div class="card-body">
         <a href="#" class="card-link">更多內容</a>
       </div>
     </div>
+    {{/each}}
+
   </div>
 </div>
