@@ -39,8 +39,14 @@
 
 ---
 ## 網站頁面
-(https://github.com/Kaiyu-Hsu/Restaurant-List/blob/main/public/img/A3%20%E9%A4%90%E5%BB%B3%E6%B8%85%E5%96%AE-1.JPG?raw=true"首頁畫面")
-(https://github.com/Kaiyu-Hsu/Restaurant-List/blob/main/public/img/A3%20%E9%A4%90%E5%BB%B3%E6%B8%85%E5%96%AE-2.JPG?raw=true"更多內容")
-(https://github.com/Kaiyu-Hsu/Restaurant-List/blob/main/public/img/A3%20%E9%A4%90%E5%BB%B3%E6%B8%85%E5%96%AE-3.JPG?raw=true"搜尋頁面")
+<img src="https://github.com/Kaiyu-Hsu/Restaurant-List/blob/main/public/img/A3%20%E9%A4%90%E5%BB%B3%E6%B8%85%E5%96%AE-1.JPG?raw=true" style="zoom:80%" />
+<img src="https://github.com/Kaiyu-Hsu/Restaurant-List/blob/main/public/img/A3%20%E9%A4%90%E5%BB%B3%E6%B8%85%E5%96%AE-2.JPG?raw=true" style="zoom:80%" />
 <img src="https://github.com/Kaiyu-Hsu/Restaurant-List/blob/main/public/img/A3%20%E9%A4%90%E5%BB%B3%E6%B8%85%E5%96%AE-3.JPG?raw=true" style="zoom:80%" />
+
 ---
+## 工具
+* [Visual Studio Code](https://visualstudio.microsoft.com/zh-hant/) - 開發環境
+* [Express](https://www.npmjs.com/package/express) - 應用程式架構
+* [Express-Handlebars ](https://www.npmjs.com/package/express-handlebars) - 模板引擎
+* [npm]](https://www.npmjs.com/package/npm) - a JavaScript package manager
+* [nodemon](https://www.npmjs.com/package/nodemon) - 可讓網頁及時呈現套件
