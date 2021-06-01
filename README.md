@@ -24,4 +24,18 @@
 按下Restaurant List標題會返回首頁
 
 ---
+## 安裝步驟
+1.按下此頁面Code按鈕後，複製本專案的URL
+2.打開終端機(terminal)，Clone本專案
+`git clone https://github.com/Kaiyu-Hsu/Restaurant-List.git `
+3.進入存放專案的資料夾
+`cd restaurant_list `
+4.在終端機(terminal)，安裝npm套件
+`npm install npm`
+5.在終端機(terminal)，安裝nodemon套件
+`npm install nodemon`
+6.在終端機(terminal)，開啟網頁
+`nodemon app.js `
 
+---
+## 網站頁面
