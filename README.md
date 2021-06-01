@@ -39,8 +39,8 @@
 
 ---
 ## 網站頁面
-![] (https://github.com/Kaiyu-Hsu/Restaurant-List/blob/main/public/img/A3%20%E9%A4%90%E5%BB%B3%E6%B8%85%E5%96%AE-1.JPG?raw=true"首頁畫面")
-![] (https://github.com/Kaiyu-Hsu/Restaurant-List/blob/main/public/img/A3%20%E9%A4%90%E5%BB%B3%E6%B8%85%E5%96%AE-2.JPG?raw=true"更多內容")
-![] (https://github.com/Kaiyu-Hsu/Restaurant-List/blob/main/public/img/A3%20%E9%A4%90%E5%BB%B3%E6%B8%85%E5%96%AE-3.JPG?raw=true"搜尋頁面")
-
+(https://github.com/Kaiyu-Hsu/Restaurant-List/blob/main/public/img/A3%20%E9%A4%90%E5%BB%B3%E6%B8%85%E5%96%AE-1.JPG?raw=true"首頁畫面")
+(https://github.com/Kaiyu-Hsu/Restaurant-List/blob/main/public/img/A3%20%E9%A4%90%E5%BB%B3%E6%B8%85%E5%96%AE-2.JPG?raw=true"更多內容")
+(https://github.com/Kaiyu-Hsu/Restaurant-List/blob/main/public/img/A3%20%E9%A4%90%E5%BB%B3%E6%B8%85%E5%96%AE-3.JPG?raw=true"搜尋頁面")
+<img src="https://github.com/Kaiyu-Hsu/Restaurant-List/blob/main/public/img/A3%20%E9%A4%90%E5%BB%B3%E6%B8%85%E5%96%AE-3.JPG?raw=true" style="zoom:80%" />
 ---
