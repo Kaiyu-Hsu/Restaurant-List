@@ -13,9 +13,15 @@ app.use(express.static('public'))
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
 app.set('view engine', 'handlebars')
 
-// setting router
+// setting router 首頁
 app.get('/', (req, res) => {
   res.render('index', { restaurants: restaurantList.results })
+})
+
+// 更多內容 => 餐廳資訊
+app.get('/restaurants/:restaurant_id', (req, res) => {
+  const restaurant = restaurantList.results.find(restaurant => restaurant.id.toString() === req.params.restaurant_id )
+  res.render('show', { restaurant: restaurant })
 })
 
 app.listen( port, () => {
