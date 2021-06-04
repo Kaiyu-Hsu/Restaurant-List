@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,19 +9,31 @@
 
   <!-- link css files here -->
   <link rel="stylesheet" href="/stylesheets/bootstrap.css">
+  <link rel="stylesheet" href="/stylesheets/main.css">
 </head>
+
 <body>
   {{!-- Navbar --}}
-  <nav class="navbar navbar-light bg-light">
-    <a class="navbar-brand" href="http://localhost:3000">Restaurant List</a>
+  <nav class="navbar navbar-dark bg-dark">
+    <div class="container">
+    <a class="navbar-brand" href="http://localhost:3000">
+      <i class="fas fa-utensils"></i>
+      Restaurant List
+    </a>
+    </div>
   </nav>
+
+  <div class="banner"></div>
 
   <!-- partial templates will replace the part of "body" here -->
   {{{body}}}
 
+  {{!-- fontawesome --}}
+  <script src="https://kit.fontawesome.com/f195bc5a1e.js" crossorigin="anonymous"></script>
   <!-- include javascript files here -->
   <script src="/javascripts/jquery-3.3.1.js"></script>
   <script src="/javascripts/popper.js"></script>
   <script src="/javascripts/bootstrap.js"></script>
 </body>
+
 </html>

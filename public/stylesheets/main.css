@@ -1,0 +1,33 @@
+header {
+  overflow: hidden;
+}
+
+.navbar .navbar-brand:hover {
+  color: #60da88;
+}
+
+.banner {
+  position: relative;
+  margin: -5px;
+  height: 200px;
+  background: center url('https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5720/restaurants-list-cover.jpg');
+  background-size: cover;
+}
+
+#search-bar {
+  margin: 0 auto;
+  max-width: 750px;
+  margin-top: -150px;
+}
+
+.form-control::placeholder {
+  color: #aaaaaa;
+}
+
+.card {
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+  height: 180px;
+}
