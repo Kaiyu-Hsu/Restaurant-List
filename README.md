@@ -42,7 +42,7 @@
 <img src="https://github.com/Kaiyu-Hsu/Restaurant-List/blob/main/public/img/index_page.JPG?raw=true" style="zoom:80%" />
 <img src="https://github.com/Kaiyu-Hsu/Restaurant-List/blob/main/public/img/search_page.JPG?raw=true" style="zoom:80%" />
 <img src="https://github.com/Kaiyu-Hsu/Restaurant-List/blob/main/public/img/show_page.JPG?raw=true" style="zoom:80%" />
-![index_page](/public/img/index_page.JPG)
+![index_page](https://github.com/Kaiyu-Hsu/Restaurant-List/blob/main/public/img/index_page.JPG?raw=true)
 
 ---
 ## 工具
