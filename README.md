@@ -47,7 +47,7 @@
 ---
 ## 工具
 * [Visual Studio Code](https://visualstudio.microsoft.com/zh-hant/) - 開發環境
-* [Express](https://www.npmjs.com/package/express) - 應用程式架構
+* [Express](https://www.npmjs.com/package/express) - 應用程式架構(version: 4.17.1)
 * [Express-Handlebars ](https://www.npmjs.com/package/express-handlebars) - 模板引擎
 * [npm](https://www.npmjs.com/package/npm) - a JavaScript package manager
 * [nodemon](https://www.npmjs.com/package/nodemon) - 可讓網頁及時呈現套件
