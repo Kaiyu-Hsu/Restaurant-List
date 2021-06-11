@@ -1,7 +1,18 @@
 const express = require('express')
+const restaurantList = require('./restaurant.json')
+const mongoose = require('mongoose') // 載入 mongoose
+
 const app = express()
 const port = 3000
-const restaurantList = require('./restaurant.json')
+
+mongoose.connect('mongodb://localhost/restaurant-list', {useNewUrlParser: true, useUnifiedTopolopy: true}) // 設定連線到 mongoDB
+const db = mongoose.connection // 取得資料庫連線狀態
+db.on('error', () => {
+  console.log('mongodb error!')
+})
+db.once('open', () => {
+  console.log('mongodb connected!')
+})
 
 // require express-handlebars here
 const exphbs = require('express-handlebars')
