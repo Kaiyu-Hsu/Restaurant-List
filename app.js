@@ -26,7 +26,12 @@ app.set('view engine', 'handlebars')
 
 // setting router 首頁
 app.get('/', (req, res) => {
-  res.render('index', { restaurants: Restaurants.results })
+  // res.render('index', { restaurants: Restaurants.results })
+  Restaurants.find()
+    .lean()
+    .then(restaurants => res.render('index', { restaurants }) )
+    .catch(error => console.log(error))
+  
 })
 
 // 更多內容 => 餐廳資訊
