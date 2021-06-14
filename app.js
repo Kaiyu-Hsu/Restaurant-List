@@ -1,5 +1,5 @@
 const express = require('express')
-const Restaurant = require('./models/restaurant')
+const restaurantList = require('./restaurant.json')
 const mongoose = require('mongoose') // 載入 mongoose
 
 const app = express()
