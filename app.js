@@ -1,11 +1,11 @@
 const express = require('express')
-const restaurantList = require('./restaurant.json')
+const Restaurants = require('./models/restaurants')
 const mongoose = require('mongoose') // 載入 mongoose
 
 const app = express()
 const port = 3000
 
-mongoose.connect('mongodb://localhost/restaurant-list', {useNewUrlParser: true, useUnifiedTopolopy: true}) // 設定連線到 mongoDB
+mongoose.connect('mongodb://localhost/restaurant-list', { useNewUrlParser: true, useUnifiedTopology: true}) // 設定連線到 mongoDB
 const db = mongoose.connection // 取得資料庫連線狀態
 db.on('error', () => {
   console.log('mongodb error!')
@@ -26,19 +26,19 @@ app.set('view engine', 'handlebars')
 
 // setting router 首頁
 app.get('/', (req, res) => {
-  res.render('index', { restaurants: restaurantList.results })
+  res.render('index', { restaurants: Restaurants.results })
 })
 
 // 更多內容 => 餐廳資訊
 app.get('/restaurants/:restaurant_id', (req, res) => {
-  const restaurant = restaurantList.results.find(restaurant => restaurant.id.toString() === req.params.restaurant_id )
+  const restaurant = Restaurants.results.find(restaurant => restaurant.id.toString() === req.params.restaurant_id )
   res.render('show', { restaurant: restaurant })
 })
 
 // search
 app.get('/search', (req, res) => {
   const keyword = req.query.keyword
-  const restaurants = restaurantList.results.filter((restaurant) => {
+  const restaurants = Restaurants.results.filter((restaurant) => {
     return restaurant.name.toLowerCase().includes(keyword.toLowerCase()) || restaurant.category.toLowerCase().includes(keyword.toLowerCase())
   })
   res.render('index', { restaurants: restaurants, keyword: keyword })
