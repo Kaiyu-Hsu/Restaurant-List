@@ -1,6 +1,7 @@
 const express = require('express')
 const Restaurants = require('./models/restaurants')
 const mongoose = require('mongoose') // 載入 mongoose
+const bodyParser = require('body-parser')
 
 const app = express()
 const port = 3000
@@ -13,6 +14,9 @@ db.on('error', () => {
 db.once('open', () => {
   console.log('mongodb connected!')
 })
+
+// 用 app.use 規定每一筆請求都需要透過 body-parser 進行前置處理
+app.use(bodyParser.urlencoded({ extended: true }))
 
 // require express-handlebars here
 const exphbs = require('express-handlebars')
@@ -34,10 +38,39 @@ app.get('/', (req, res) => {
   
 })
 
+// create Q:新增後無法跳回首頁
+app.get('/restaurants/new', (req, res) => {
+  return res.render('new')
+})
+
+app.post('/restaurants', (req, res) => {
+  const name = req.body.name //必填
+  const name_en = req.body.name_en
+  const category = req.body.category //必填
+  const image = req.body.image
+  const location = req.body.location //必填
+  const phone = req.body.phone //必填
+  const google_map = req.body.google_map
+  const rating = req.body.rating //必填
+  const description = req.body.description
+  console.log({
+    name, name_en, category, image, location, phone, google_map, rating, description
+  })
+  return Restaurants.create({
+    name, name_en, category, image, location, phone, google_map, rating, description})
+    .then(() => res, redirect('/'))
+    .catch(error => console.log(error))
+  
+})
+
 // 更多內容 => 餐廳資訊
-app.get('/restaurants/:restaurant_id', (req, res) => {
-  const restaurant = Restaurants.results.find(restaurant => restaurant.id.toString() === req.params.restaurant_id )
-  res.render('show', { restaurant: restaurant })
+app.get('/restaurants/:id', (req, res) => {
+  const id = req.params.id
+  // res.render('show', { restaurant: restaurant })
+  return Restaurants.findById(id)
+    .lean()
+    .then((restaurants) => res.render('show', { restaurants }))
+    .catch(error => console.log(error))
 })
 
 // search

@@ -16,6 +16,8 @@
 
   {{!-- card --}}
   <div class="row justify-content-center mt-5" id="data-panel">
+    
+    <a href="./restaurants/new">Create</a>
 
     {{#each restaurants}}
     <div class="card m-2" style="width: 18rem;">
@@ -34,7 +36,7 @@
           </li>
       </ul>
       <div class="card-body">
-        <a href="/restaurants/{{this.id}}" class="card-link">更多內容</a>
+        <a href="/restaurants/{{this._id}}" class="card-link">更多內容</a>
       </div>
     </div>
     {{/each}}
