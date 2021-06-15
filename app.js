@@ -38,7 +38,7 @@ app.get('/', (req, res) => {
   
 })
 
-// create Q:新增後無法跳回首頁
+// create 
 app.get('/restaurants/new', (req, res) => {
   return res.render('new')
 })
@@ -59,7 +59,7 @@ app.post('/restaurants', (req, res) => {
   
   return Restaurants.create({
     name, name_en, category, image, location, phone, google_map, rating, description})
-    .then(() => res, redirect('/'))
+    .then(() => res.redirect('/'))
     .catch(error => console.log(error))
   
 })
@@ -112,6 +112,14 @@ app.post('/restaurants/:id/edit', (req, res) => {
     .catch(error => console.log(error))
 })
 
+// delete
+app.post('/restaurants/:id/delete', (req, res) => {
+  const id = req.params.id
+  return Restaurants.findById(id)
+    .then(restaurants => restaurants.remove())
+    .then(() => res.redirect('/'))
+    .catch(error => console.log(error))
+})
 
 // search
 app.get('/search', (req, res) => {
