@@ -1,34 +1,37 @@
 const express = require('express')
-const Restaurants = require('./models/restaurants')
-const mongoose = require('mongoose') // 載入 mongoose
+const mongoose = require('mongoose')
+const exphbs = require('express-handlebars')
 const bodyParser = require('body-parser')
+const methodOverride = require('method-override')
+
+const Restaurants = require('./models/restaurants')
 
 const app = express()
 const port = 3000
 
-mongoose.connect('mongodb://localhost/restaurant-list', { useNewUrlParser: true, useUnifiedTopology: true}) // 設定連線到 mongoDB
-const db = mongoose.connection // 取得資料庫連線狀態
+mongoose.connect('mongodb://localhost/restaurant-list', { useNewUrlParser: true, useUnifiedTopology: true} )
+
+const db = mongoose.connection
+
 db.on('error', () => {
   console.log('mongodb error!')
 })
+
 db.once('open', () => {
   console.log('mongodb connected!')
 })
 
-// 用 app.use 規定每一筆請求都需要透過 body-parser 進行前置處理
+app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
+app.set('view engine', 'handlebars')
+
 app.use(bodyParser.urlencoded({ extended: true }))
 
-// require express-handlebars here
-const exphbs = require('express-handlebars')
+app.use(methodOverride('_method'))
 
 //告訴 Express 靜態檔案是放在名為 public 的資料夾中
 app.use(express.static('public'))
 
-// setting template engine
-app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
-app.set('view engine', 'handlebars')
-
-// setting router 首頁
+// home
 app.get('/', (req, res) => {
   Restaurants.find()
     .lean()
@@ -83,7 +86,7 @@ app.get('/restaurants/:id/edit', (req, res) => {
     .catch(error => console.log(error))
 })
 
-app.post('/restaurants/:id/edit', (req, res) => {
+app.put('/restaurants/:id', (req, res) => {
   const id = req.params.id
   const name = req.body.name
   const name_en = req.body.name_en
@@ -112,7 +115,7 @@ app.post('/restaurants/:id/edit', (req, res) => {
 })
 
 // delete
-app.post('/restaurants/:id/delete', (req, res) => {
+app.delete('/restaurants/:id', (req, res) => {
   const id = req.params.id
   return Restaurants.findById(id)
     .then(restaurants => restaurants.remove())

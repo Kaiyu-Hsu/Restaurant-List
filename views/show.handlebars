@@ -25,7 +25,7 @@
       </p>
       <a href="/restaurants/{{ restaurants._id }}/edit">編輯</a>
       <a href="/">回首頁</a>
-      <form action="/restaurants/{{ this._id }}/delete" method="POST" style="display: inline;">
+      <form action="/restaurants/{{ this._id }}?_method=DELETE" method="POST" style="display: inline;">
         <button class="btn btn-outline-danger" type="submit">delete</button>
       </form>
     </div>
