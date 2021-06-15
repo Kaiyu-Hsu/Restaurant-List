@@ -8,16 +8,18 @@
           <input type="text" name="keyword" class="form-control" placeholder="請輸入餐廳名稱或分類..." value="{{keyword}}">
           <div class="input-group-append">
             <button class="btn btn-primary" type="submit" id="search-button">Search</button>
+            <a class="btn btn-success" href="./restaurants/new" role="button">Create</a>
           </div>
         </div>
       </form>
     </div>
+    
   </div>
+
+  
 
   {{!-- card --}}
   <div class="row justify-content-center mt-5" id="data-panel">
-    
-    <a href="./restaurants/new">Create</a>
 
     {{#each restaurants}}
     <div class="card m-2" style="width: 18rem;">
@@ -28,12 +30,12 @@
       <ul class="list-group list-group-flush">
         <li class="list-group-item" id="category">
           <i class="far fa-flag"></i>
-           {{this.category}}
-           </li>
+          {{this.category}}
+        </li>
         <li class="list-group-item" id="rating">
           <i class="far fa-thumbs-up"></i>
           {{this.rating}}
-          </li>
+        </li>
       </ul>
       <div class="card-body">
         <a href="/restaurants/{{this._id}}" class="card-link">更多內容</a>
