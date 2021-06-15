@@ -56,6 +56,7 @@ app.post('/restaurants', (req, res) => {
   console.log({
     name, name_en, category, image, location, phone, google_map, rating, description
   })
+  
   return Restaurants.create({
     name, name_en, category, image, location, phone, google_map, rating, description})
     .then(() => res, redirect('/'))
@@ -66,12 +67,51 @@ app.post('/restaurants', (req, res) => {
 // 更多內容 => 餐廳資訊
 app.get('/restaurants/:id', (req, res) => {
   const id = req.params.id
-  // res.render('show', { restaurant: restaurant })
+  
   return Restaurants.findById(id)
     .lean()
     .then((restaurants) => res.render('show', { restaurants }))
     .catch(error => console.log(error))
 })
+
+// update
+app.get('/restaurants/:id/edit', (req, res) => {
+  const id = req.params.id
+
+  return Restaurants.findById(id)
+    .lean()
+    .then((restaurants) => res.render('edit', { restaurants }))
+    .catch(error => console.log(error))
+})
+
+app.post('/restaurants/:id/edit', (req, res) => {
+  const id = req.params.id
+  const name = req.body.name
+  const name_en = req.body.name_en
+  const category = req.body.category
+  const image = req.body.image
+  const location = req.body.location
+  const phone = req.body.phone
+  const google_map = req.body.google_map
+  const rating = req.body.rating
+  const description = req.body.description
+  return Restaurants.findById(id)
+    .then(restaurants => {
+      restaurants.name = name
+      restaurants.name_en = name_en
+      restaurants.category = category
+      restaurants.image = image
+      restaurants.location = location
+      restaurants.phone = phone
+      restaurants.google_map = google_map
+      restaurants.rating = rating
+      restaurants.description = description
+      return restaurants.save()
+    })
+    .then(() => res.redirect(`/restaurants/${id}`))
+    .catch(error => console.log(error))
+})
+
 
 // search
 app.get('/search', (req, res) => {
