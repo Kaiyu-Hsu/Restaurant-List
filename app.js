@@ -30,7 +30,6 @@ app.set('view engine', 'handlebars')
 
 // setting router 首頁
 app.get('/', (req, res) => {
-  // res.render('index', { restaurants: Restaurants.results })
   Restaurants.find()
     .lean()
     .then(restaurants => res.render('index', { restaurants }) )
@@ -64,7 +63,7 @@ app.post('/restaurants', (req, res) => {
   
 })
 
-// 更多內容 => 餐廳資訊
+// detail
 app.get('/restaurants/:id', (req, res) => {
   const id = req.params.id
   

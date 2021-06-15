@@ -6,7 +6,7 @@
   <input type="text" placeholder="location" name="location" value="{{ restaurants.location }}">
   <input type="text" placeholder="phone" name="phone" value="{{ restaurants.phone }}">
   <input type="text" placeholder="google_map" name="google_map" value="{{ restaurants.google_map }}">
-  <input type="number" placeholder="rating" name="rating" value="{{ restaurants.rating }}">
+  <input type="number" placeholder="rating" name="rating" min="0" max="5" step="0.1" value="{{ restaurants.rating }}">
   <input type="text" placeholder="description" name="description" value="{{ restaurants.description }}">
   <button type="submit">儲存</button>
   <a href="/">回首頁</a>
